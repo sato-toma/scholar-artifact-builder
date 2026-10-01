@@ -1,0 +1,33 @@
+# Normalize text files in the repository.
+* text=auto eol=lf
+
+# Keep Windows command and PowerShell scripts in their native line ending.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Common text formats.
+*.css text
+*.csv text
+*.html text
+*.js text
+*.json text
+*.md text
+*.mjs text
+*.ts text
+*.tsx text
+*.txt text
+*.xml text
+*.yaml text
+*.yml text
+
+# Common binary formats.
+*.gif binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.pdf binary
+*.png binary
+*.webp binary
+*.woff binary
+*.woff2 binary
