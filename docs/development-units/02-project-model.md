@@ -28,6 +28,21 @@ Markdown artifact.
 - The model preserves source locations where practical.
 - The model does not require LaTeX, PDF, AI, or network services.
 
+## Current POC Model
+
+The current implementation supports:
+
+- Project `name`, `version`, and optional `language`.
+- Paper artifacts with an `id`, `type`, and ordered section paths.
+- Relative section paths that remain inside the project directory.
+- Structured diagnostics for invalid project configuration.
+
+Claims, evidence, references, figures, and generated content are deliberately
+not part of this model yet.
+
+For a Japanese explanation of the model background and boundaries, see
+[02-project-model.ja.md](./02-project-model.ja.md).
+
 ## Work Items
 
 1. Define the smallest project and artifact data structures.
@@ -54,4 +69,5 @@ Markdown artifact.
 
 The first renderer can receive a stable intermediate representation, and model
 validation failures are understandable to a project user. The model is small
-enough to change without a migration system.
+enough to change without a migration system. The current POC fixture loads
+successfully, and invalid artifact types and paths are rejected by tests.
