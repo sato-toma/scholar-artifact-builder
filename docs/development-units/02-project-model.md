@@ -2,8 +2,8 @@
 
 ## Goal
 
-Represent the smallest research project independently from its generated
-Markdown artifact.
+- Represent the smallest research project independently from generated Markdown.
+- Keep the model independent from YAML, Markdown, LaTeX, and PDF.
 
 ## In Scope
 
@@ -45,12 +45,12 @@ For a Japanese explanation of the model background and boundaries, see
 
 ## Work Items
 
-1. Define the smallest project and artifact data structures.
-2. Decide which fields are required for the PoC.
-3. Add schemas or equivalent validation contracts.
-4. Implement loading and normalization.
-5. Add valid and invalid fixtures.
-6. Document fields that are provisional.
+- Define the smallest project and artifact data structures.
+- Decide which fields are required for the POC.
+- Add schemas or equivalent validation contracts.
+- Implement loading and normalization.
+- Add valid and invalid fixtures.
+- Document provisional fields.
 
 ## Verification
 
@@ -67,7 +67,8 @@ For a Japanese explanation of the model background and boundaries, see
 
 ## Exit Criteria
 
-The first renderer can receive a stable intermediate representation, and model
-validation failures are understandable to a project user. The model is small
-enough to change without a migration system. The current POC fixture loads
-successfully, and invalid artifact types and paths are rejected by tests.
+- A renderer can receive a stable intermediate representation.
+- Model validation failures are understandable to a project user.
+- The model is small enough to change without a migration system.
+- The POC fixture loads successfully.
+- Invalid artifact types and paths are rejected by tests.

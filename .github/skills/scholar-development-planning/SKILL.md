@@ -26,6 +26,14 @@ PoC boundaries, architecture, AI workflow guidance, or acceptance criteria.
 9. Update the unit plan, exit criteria, or ADR when the work changes them.
 10. Report changed files, validation, and remaining open questions.
 
+## Documentation Format
+
+- Use bullet points for scope, outputs, work items, verification, and exit criteria.
+- Keep explanatory paragraphs short and focused.
+- Treat English development plans as canonical.
+- When Japanese documentation is requested, create a concise derivative that explains the same scope.
+- Mark Japanese derivatives as non-normative and keep them synchronized with the English plan.
+
 ## Planning Rules
 
 - Keep the deterministic local build independent from AI and network services.
