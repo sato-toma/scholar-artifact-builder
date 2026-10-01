@@ -38,7 +38,8 @@ Create only the small, portable workspace needed to run the deterministic POC.
 ## Verification
 
 - Run the install command from a clean checkout.
-- Run formatting, linting, type-checking, and tests.
+- Run the type-check and test commands.
+- Defer formatting and linting until the POC exposes a concrete need for them.
 - Run the same commands on Windows, Linux, and macOS in CI when CI exists.
 
 ## Open Questions
@@ -52,4 +53,5 @@ These questions remain open until the PoC requires an answer.
 ## Exit Criteria
 
 The repository can run the POC without hidden setup steps, and the required
-checks have documented commands.
+type-check and test commands have documented commands. Formatting and linting
+remain intentionally deferred for the POC.

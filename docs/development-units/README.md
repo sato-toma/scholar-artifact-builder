@@ -9,7 +9,7 @@ purpose and one verifiable outcome.
 | Unit | Purpose | Initial status |
 |---|---|---|
 | [00 Minimal POC Slice](./00-minimal-poc-slice.md) | Prove the smallest deterministic path from local sources to a generated artifact. | Next |
-| [01 Foundation](./01-foundation.md) | Establish only the workspace conventions needed by the POC. | Planned |
+| [01 Foundation](./01-foundation.md) | Establish only the workspace conventions needed by the POC. | In progress |
 | [02 Project Model](./02-project-model.md) | Define and load the smallest format-independent research model. | Planned |
 | [03 CLI and Validation](./03-cli-validation.md) | Provide only the POC commands and deterministic diagnostics. | Planned |
 | [04 Rendering and Build](./04-rendering-build.md) | Generate a Markdown paper without external document tools. | Planned |

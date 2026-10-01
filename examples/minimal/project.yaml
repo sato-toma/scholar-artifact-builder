@@ -1,0 +1,10 @@
+name: minimal-research
+version: 0.1.0
+language: en
+
+artifacts:
+  paper:
+    type: paper
+    sections:
+      - research/overview.md
+      - research/method.md
