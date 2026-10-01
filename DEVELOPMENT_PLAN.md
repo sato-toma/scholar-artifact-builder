@@ -2007,3 +2007,26 @@ The first implementation backlog should be completed in this order:
 The backlog should be revised only when implementation evidence changes the
 architecture. New features should be added to a later phase unless they are
 required to satisfy the First Implementation Milestone.
+
+---
+
+# 44. Minimal POC Development Plan
+
+The first implementation should follow the smaller POC slice documented in
+[`docs/development-units/00-minimal-poc-slice.md`](docs/development-units/00-minimal-poc-slice.md).
+
+The POC path is:
+
+```text
+project.yaml + research/*.md
+  ↓
+research model
+  ↓
+validation
+  ↓
+build/paper.md
+```
+
+PDF, LaTeX, BibTeX, figures, provenance, AI, and external integrations are
+follow-up work. They should not be added to the first implementation unless
+the POC exposes a concrete need for them.

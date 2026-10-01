@@ -2,22 +2,23 @@
 
 ## Goal
 
-Create a small, portable workspace that can host the deterministic builder.
+Create only the small, portable workspace needed to run the deterministic POC.
 
 ## In Scope
 
 - Node.js and TypeScript project setup.
-- Package scripts for formatting, linting, type-checking, and tests.
-- Initial package boundaries aligned with the existing plan.
+- The minimum package scripts needed to run and test the POC.
+- A small source layout that can be reorganized after the POC.
 - Cross-platform path and process conventions.
-- A minimal example project for integration tests.
+- One minimal example project for integration tests.
 
 ## Out of Scope
 
 - Selecting a final CLI framework.
-- Selecting a final PDF or LaTeX toolchain.
+- Selecting a PDF or LaTeX toolchain.
 - AI providers, cloud services, and a web UI.
 - Implementing the complete research model.
+- Creating a production-ready monorepo structure.
 
 ## Expected Outputs
 
@@ -29,10 +30,10 @@ Create a small, portable workspace that can host the deterministic builder.
 ## Work Items
 
 1. Create the package and TypeScript configuration.
-2. Add the smallest useful package layout.
-3. Add scripts for formatting, linting, type-checking, and testing.
+2. Add the smallest useful source layout.
+3. Add scripts for type-checking and tests.
 4. Add the minimal example project and test fixture conventions.
-5. Document commands and supported Node.js versions.
+5. Document only the commands needed to run the POC.
 
 ## Verification
 
@@ -50,5 +51,5 @@ These questions remain open until the PoC requires an answer.
 
 ## Exit Criteria
 
-The repository can accept the first implementation without hidden setup steps,
-and all baseline checks have documented commands.
+The repository can run the POC without hidden setup steps, and the required
+checks have documented commands.

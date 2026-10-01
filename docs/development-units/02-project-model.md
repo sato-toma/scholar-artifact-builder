@@ -2,16 +2,16 @@
 
 ## Goal
 
-Represent a research project independently from Markdown, LaTeX, Marp, HTML,
-and PDF.
+Represent the smallest research project independently from its generated
+Markdown artifact.
 
 ## In Scope
 
 - Project configuration loading.
-- Artifact definitions.
-- Research materials and stable identifiers.
-- A small intermediate representation for the first paper build.
-- Schema validation boundaries.
+- One paper artifact definition.
+- Markdown research materials and stable source identifiers.
+- A small intermediate representation for the POC paper.
+- Validation boundaries that can evolve later.
 
 ## Out of Scope
 
@@ -26,6 +26,7 @@ and PDF.
 - Invalid configuration produces a structured diagnostic.
 - Renderers consume the model rather than reading source files directly.
 - The model preserves source locations where practical.
+- The model does not require LaTeX, PDF, AI, or network services.
 
 ## Work Items
 
@@ -52,4 +53,5 @@ and PDF.
 ## Exit Criteria
 
 The first renderer can receive a stable intermediate representation, and model
-validation failures are understandable to a project user.
+validation failures are understandable to a project user. The model is small
+enough to change without a migration system.

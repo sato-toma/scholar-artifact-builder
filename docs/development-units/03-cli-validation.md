@@ -2,19 +2,19 @@
 
 ## Goal
 
-Provide a CLI that makes the project discoverable, inspectable, and safely
-validated before building.
+Provide the smallest CLI that can initialize, validate, and build the POC.
 
 ## In Scope
 
 - `sab init`.
 - `sab validate`.
-- `sab inspect`.
+- `sab build paper`.
 - `sab clean`.
 - Clear exit codes and diagnostics.
 
 ## Out of Scope
 
+- `sab inspect`, `sab doctor`, and other convenience commands.
 - Interactive project editing.
 - Remote services.
 - Full static analysis of research claims.
@@ -34,7 +34,7 @@ validated before building.
 3. Add validation stages for configuration, files, and references.
 4. Define error and warning behavior.
 5. Add command-level tests and invalid fixtures.
-6. Document the CLI examples.
+6. Document the POC CLI examples.
 
 ## Verification
 
@@ -52,5 +52,5 @@ validated before building.
 
 ## Exit Criteria
 
-A user can initialize a project, identify basic problems, and clean generated
-output without reading implementation details.
+A user can initialize a project, identify basic problems, build a Markdown
+paper, and clean generated output without reading implementation details.
