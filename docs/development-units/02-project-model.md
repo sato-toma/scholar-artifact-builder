@@ -2,8 +2,8 @@
 
 ## Goal
 
-Represent the smallest research project independently from its generated
-Markdown artifact.
+- Represent the smallest research project independently from generated Markdown.
+- Keep the model independent from YAML, Markdown, LaTeX, and PDF.
 
 ## In Scope
 
@@ -28,14 +28,29 @@ Markdown artifact.
 - The model preserves source locations where practical.
 - The model does not require LaTeX, PDF, AI, or network services.
 
+## Current POC Model
+
+The current implementation supports:
+
+- Project `name`, `version`, and optional `language`.
+- Paper artifacts with an `id`, `type`, and ordered section paths.
+- Relative section paths that remain inside the project directory.
+- Structured diagnostics for invalid project configuration.
+
+Claims, evidence, references, figures, and generated content are deliberately
+not part of this model yet.
+
+For a Japanese explanation of the model background and boundaries, see
+[02-project-model.ja.md](./02-project-model.ja.md).
+
 ## Work Items
 
-1. Define the smallest project and artifact data structures.
-2. Decide which fields are required for the PoC.
-3. Add schemas or equivalent validation contracts.
-4. Implement loading and normalization.
-5. Add valid and invalid fixtures.
-6. Document fields that are provisional.
+- Define the smallest project and artifact data structures.
+- Decide which fields are required for the POC.
+- Add schemas or equivalent validation contracts.
+- Implement loading and normalization.
+- Add valid and invalid fixtures.
+- Document provisional fields.
 
 ## Verification
 
@@ -52,6 +67,8 @@ Markdown artifact.
 
 ## Exit Criteria
 
-The first renderer can receive a stable intermediate representation, and model
-validation failures are understandable to a project user. The model is small
-enough to change without a migration system.
+- A renderer can receive a stable intermediate representation.
+- Model validation failures are understandable to a project user.
+- The model is small enough to change without a migration system.
+- The POC fixture loads successfully.
+- Invalid artifact types and paths are rejected by tests.
