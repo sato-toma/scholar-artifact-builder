@@ -17,7 +17,9 @@ export function formatHelp(): string {
   ].join("\\n");
 }
 
-export function main(argumentsList: readonly string[] = process.argv.slice(2)): void {
+export function main(
+  argumentsList: readonly string[] = process.argv.slice(2),
+): void {
   const command = argumentsList[0];
 
   if (command === undefined || command === "help" || command === "--help") {
