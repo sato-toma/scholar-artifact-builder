@@ -3,9 +3,11 @@ export interface ResearchSection {
   readonly path: string;
 }
 
-export interface PaperArtifact {
+export type ArtifactType = "paper" | "presentation" | "poster" | "preprint";
+
+export interface ResearchArtifact {
   readonly id: string;
-  readonly type: "paper";
+  readonly type: ArtifactType;
   readonly sections: readonly ResearchSection[];
 }
 
@@ -14,7 +16,7 @@ export interface ResearchProject {
   readonly version: string;
   readonly language?: string;
   readonly rootDirectory: string;
-  readonly artifacts: Readonly<Record<string, PaperArtifact>>;
+  readonly artifacts: Readonly<Record<string, ResearchArtifact>>;
 }
 
 export interface ProjectDiagnostic {

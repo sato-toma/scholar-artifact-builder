@@ -2,9 +2,10 @@ import { readFile } from "node:fs/promises";
 import { isAbsolute, relative, resolve } from "node:path";
 import { parse } from "yaml";
 import {
-  type PaperArtifact,
+  type ArtifactType,
   ProjectConfigError,
   type ProjectDiagnostic,
+  type ResearchArtifact,
   type ResearchProject,
   type ResearchSection,
 } from "./project.js";
@@ -16,7 +17,7 @@ interface RawProjectConfig {
   artifacts?: unknown;
 }
 
-interface RawPaperArtifact {
+interface RawResearchArtifact {
   type?: unknown;
   sections?: unknown;
 }
@@ -80,7 +81,7 @@ function normalizeArtifacts(
   value: unknown,
   rootDirectory: string,
   diagnostics: ProjectDiagnostic[],
-): Readonly<Record<string, PaperArtifact>> {
+): Readonly<Record<string, ResearchArtifact>> {
   if (!isRecord(value)) {
     diagnostics.push({
       code: "SAB102",
@@ -90,7 +91,7 @@ function normalizeArtifacts(
     return {};
   }
 
-  const normalized: Record<string, PaperArtifact> = {};
+  const normalized: Record<string, ResearchArtifact> = {};
   for (const [id, artifact] of Object.entries(value)) {
     if (!isRecord(artifact)) {
       diagnostics.push({
@@ -101,12 +102,21 @@ function normalizeArtifacts(
       continue;
     }
 
-    const rawArtifact = artifact as RawPaperArtifact;
-    if (rawArtifact.type !== "paper") {
+    const rawArtifact = artifact as RawResearchArtifact;
+    if (!isArtifactType(rawArtifact.type)) {
       diagnostics.push({
         code: "SAB104",
-        message: `Artifact '${id}' must have type 'paper'.`,
+        message: `Artifact '${id}' must have one of: paper, presentation, poster, preprint.`,
         path: `artifacts.${id}.type`,
+      });
+      continue;
+    }
+
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9_-]*$/.test(id)) {
+      diagnostics.push({
+        code: "SAB110",
+        message: `Artifact id '${id}' must contain only letters, numbers, hyphens, and underscores.`,
+        path: `artifacts.${id}`,
       });
       continue;
     }
@@ -153,11 +163,20 @@ function normalizeArtifacts(
     }
 
     if (sections.length > 0) {
-      normalized[id] = { id, type: "paper", sections };
+      normalized[id] = { id, type: rawArtifact.type, sections };
     }
   }
 
   return normalized;
+}
+
+function isArtifactType(value: unknown): value is ArtifactType {
+  return (
+    value === "paper" ||
+    value === "presentation" ||
+    value === "poster" ||
+    value === "preprint"
+  );
 }
 
 function requiredString(

@@ -105,15 +105,21 @@ and build multiple outputs:
 
 ```text
 Paper
-Conference presentation
-Seminar material
-Poster
+Early research presentation
+Conference poster
+Research paper or preprint
 Textbook chapter
 Technical report
 Web article
 ```
 
 from the same underlying research information.
+
+These are sibling views of shared research materials, not a required linear
+sequence. A researcher may prepare presentation material while results are
+still preliminary, then create a poster or preprint when each is ready. An
+arXiv-targeted preprint is a manuscript draft; it does not imply an arXiv
+submission package or a required order relative to a presentation or poster.
 
 ## 1.3 Core Principle
 
@@ -220,6 +226,7 @@ conference-paper
 presentation
 poster
 seminar
+preprint
 textbook
 technical-report
 web-article
