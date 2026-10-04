@@ -1,0 +1,22 @@
+name: reproducible-notes
+version: 0.1.0
+language: en
+
+artifacts:
+  research-talk:
+    type: presentation
+    sections:
+      - research/overview.md
+      - research/method.md
+  conference-poster:
+    type: poster
+    sections:
+      - research/overview.md
+      - research/method.md
+      - research/results.md
+  arxiv-preprint:
+    type: preprint
+    sections:
+      - research/overview.md
+      - research/method.md
+      - research/results.md

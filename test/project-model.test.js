@@ -15,6 +15,16 @@ test("loads the minimal example into a renderer-independent model", async () => 
   ]);
 });
 
+test("loads separate presentation, poster, and preprint artifact types", async () => {
+  const project = await loadProject(resolve("examples/dissemination"));
+
+  assert.equal(project.artifacts["research-talk"].type, "presentation");
+  assert.equal(project.artifacts["conference-poster"].type, "poster");
+  assert.equal(project.artifacts["arxiv-preprint"].type, "preprint");
+  assert.equal(project.artifacts["research-talk"].sections.length, 2);
+  assert.equal(project.artifacts["arxiv-preprint"].sections.length, 3);
+});
+
 test("rejects an artifact section outside the project directory", () => {
   assert.throws(
     () =>
@@ -34,7 +44,7 @@ test("rejects an artifact section outside the project directory", () => {
   );
 });
 
-test("rejects a non-paper artifact in the POC model", () => {
+test("rejects an unsupported artifact type", () => {
   assert.throws(
     () =>
       normalizeProject(
@@ -43,7 +53,7 @@ test("rejects a non-paper artifact in the POC model", () => {
           version: "0.1.0",
           artifacts: {
             slides: {
-              type: "presentation",
+              type: "slide-deck",
               sections: ["research/overview.md"],
             },
           },
